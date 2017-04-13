@@ -13,15 +13,17 @@ public class SpeechScript : MonoBehaviour {
 	public SpeechToTextWidget m_SpeechToTextWidget;
 	float rotationSpeed = 30f;
 	float height = 0.05f;
-	float walkSpeed = 0.0008f;
+	float walkSpeed = 0.001f; //0.0008f;
 	float jumpSpeed = 7f;
+	public Text transcript;
+	GameObject[] maze;
 
 	GameObject ball;
 	GameObject cube;
 	public static GameObject obj;
 	Rigidbody rb;
 
-	List<string> createList = new List<string>() {"cube+?", "ball+?", "plane+?", "floor+?", "playground+", "blue", "yellow", "green", "red"};
+	List<string> createList = new List<string>() {"cube+?", "ball+?", "plane+?", "floor+?", "maze+?", "blue", "yellow", "green", "red"};
 	List<string> commandoList = new List<string> () {"jump", "left", "right", "rotate", "forward", "back"};
 	List<string> lastCommand = new List<string> () {"", ""};
 
@@ -31,12 +33,17 @@ public class SpeechScript : MonoBehaviour {
 		ball.SetActive (false);
 		cube.SetActive (false);
 		this.gameObject.GetComponent<Renderer> ().enabled = false;
+		maze = GameObject.FindGameObjectsWithTag ("Maze");
+		foreach(GameObject mazewall in maze){
+			mazewall.SetActive (false);
+		}
+		transcript.text = "";
 	}
 
 	void Update(){
 		//inputString = m_SpeechToTextWidget.outputString;
 		if (inputString != null){
-			//Debug.Log (inputString);
+			transcript.text = inputString;
 			createWorld ();
 		}
 
@@ -66,6 +73,12 @@ public class SpeechScript : MonoBehaviour {
 					cube.SetActive (true);
 					obj = cube;
 					rb = cube.GetComponent<Rigidbody> ();
+				}
+
+				if (commando.Equals ("maze+?")){
+					foreach(GameObject mazewall in maze){
+						mazewall.SetActive (true);
+					}
 				}
 
 				if (commando.Equals ("blue"))
