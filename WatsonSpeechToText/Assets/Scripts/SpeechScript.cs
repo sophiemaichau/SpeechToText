@@ -41,7 +41,7 @@ public class SpeechScript : MonoBehaviour {
 	}
 
 	void Update(){
-		//inputString = m_SpeechToTextWidget.outputString;
+		inputString = m_SpeechToTextWidget.outputString;
 		if (inputString != null){
 			transcript.text = inputString;
 			createWorld ();
