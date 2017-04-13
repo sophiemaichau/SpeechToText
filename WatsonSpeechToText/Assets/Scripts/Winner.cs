@@ -18,7 +18,7 @@ public class Winner : MonoBehaviour {
 			transcript.fontSize = 20;
 			transcript.rectTransform.localPosition = new Vector3(20,60,0);
 			transcript.color = Color.green;
-			transcript.text = "YOU WON!";
+			transcript.text = "You completed!";
 		}
 	}
 }

@@ -12,8 +12,8 @@ public class CameraController : MonoBehaviour {
 	void Start (){
 		cube = GameObject.Find ("Cube");
 		ball = GameObject.Find ("Ball");
-		posOffset = new Vector3(0,3,-5);
-		rotOffset = new Vector3 (10, 0, 0);
+		posOffset = new Vector3(0,5,-8);
+		rotOffset = new Vector3 (20, 0, 0);
 	}
 
 	void LateUpdate (){
