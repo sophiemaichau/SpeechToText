@@ -14,7 +14,7 @@
 3.3 Follow the tutorial <br />
 3.4 If 'Watson' appear in the menu bar, but "Request Couldn't be Processed", refresh your access: Watson -> Configuration Editor. <br />
 3.5 Insert your credentials from Bluemix
-4. Make sure the following C# scripts is attached to the following gameObjects:
+4. Make sure the following C# scripts is attached to the following gameObjects: <br />
 4.1 SpeechScript is attached to Plane <br />
 4.2 CameraScript is attached to Main Camera <br />
 4.3 WinnerScript is attached to Winner
