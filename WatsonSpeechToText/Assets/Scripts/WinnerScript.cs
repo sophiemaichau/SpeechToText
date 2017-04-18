@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Winner : MonoBehaviour {
+public class WinnerScript : MonoBehaviour {
 	GameObject world;
 	public Text transcript;
 

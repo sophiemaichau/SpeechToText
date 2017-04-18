@@ -89,9 +89,6 @@ public class SpeechScript : MonoBehaviour {
 
 				if(commando.Equals("green"))
 					obj.GetComponent<Renderer> ().material.color = Color.green;
-				
-				if(commando.Equals("red"))
-					obj.GetComponent<Renderer> ().material.color = Color.red;
 			}
 		}
 		playerMove ();

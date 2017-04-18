@@ -46,9 +46,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\CameraController.cs" />
+     <Compile Include="Assets\Scripts\CameraScript.cs" />
      <Compile Include="Assets\Scripts\SpeechScript.cs" />
-     <Compile Include="Assets\Scripts\Winner.cs" />
+     <Compile Include="Assets\Scripts\WinnerScript.cs" />
      <Compile Include="Assets\Watson\Examples\ServiceExamples\Scripts\ExampleAlchemyDataNews.cs" />
      <Compile Include="Assets\Watson\Examples\ServiceExamples\Scripts\ExampleAlchemyLanguage.cs" />
      <Compile Include="Assets\Watson\Examples\ServiceExamples\Scripts\ExampleConversation.cs" />
