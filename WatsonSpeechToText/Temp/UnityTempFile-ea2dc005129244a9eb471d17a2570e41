@@ -88,9 +88,9 @@
 -define:UNITY_EDITOR_OSX
 -define:ENABLE_NATIVE_ARRAY_CHECKS
 -define:UNITY_TEAM_LICENSE
-'Assets/Scripts/CameraController.cs'
+'Assets/Scripts/CameraScript.cs'
 'Assets/Scripts/SpeechScript.cs'
-'Assets/Scripts/Winner.cs'
+'Assets/Scripts/WinnerScript.cs'
 'Assets/Watson/Examples/ServiceExamples/Scripts/ExampleAlchemyDataNews.cs'
 'Assets/Watson/Examples/ServiceExamples/Scripts/ExampleAlchemyLanguage.cs'
 'Assets/Watson/Examples/ServiceExamples/Scripts/ExampleConversation.cs'
