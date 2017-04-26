@@ -12,7 +12,6 @@ public class SpeechScript : MonoBehaviour {
 	public string inputString;
 	public SpeechToTextWidget m_SpeechToTextWidget;
 	float rotationSpeed = 30f;
-	float height = 0.05f;
 	float walkSpeed = 0.001f; //0.0008f;
 	float jumpSpeed = 7f;
 	public Text transcript;
@@ -101,25 +100,25 @@ public class SpeechScript : MonoBehaviour {
 				lastCommand.Add (commando);
 
 				if (commando.Equals ("rotate"))
-					obj.transform.rotation = Quaternion.Euler(new Vector3(0, rotationSpeed * Time.time, 0));
+					obj.transform.rotation = Quaternion.Euler(new Vector3(0, rotationSpeed * Time.deltaTime, 0));
 
 				if (commando.Equals ("left"))
-					obj.transform.position -= new Vector3 (walkSpeed * Time.time, 0, 0);
+					obj.transform.position -= new Vector3 (walkSpeed * Time.deltaTime, 0, 0);
 
 				if (commando.Equals ("right"))
-					obj.transform.position += new Vector3 (walkSpeed * Time.time, 0, 0);
+					obj.transform.position += new Vector3 (walkSpeed * Time.deltaTime, 0, 0);
 
 				if (commando.Equals ("forward"))
-					obj.transform.position += new Vector3 (0, 0, walkSpeed * Time.time);
+					obj.transform.position += new Vector3 (0, 0, walkSpeed * Time.deltaTime);
 
 				if (commando.Equals ("back"))
-					obj.transform.position -= new Vector3 (0, 0, walkSpeed * Time.time);
+					obj.transform.position -= new Vector3 (0, 0, walkSpeed * Time.deltaTime);
 
 				string com = lastCommand [lastCommand.Count - 1];
 				string lastCom = lastCommand [lastCommand.Count - 2];
 
-				if (commando.Equals ("jump") && !lastCom.Equals("jump") && !lastCom.Equals("right")
-					&& !com.Equals("right") && !com.Equals("left") && !com.Equals("forward") && !com.Equals("back")) {
+				if (commando.Equals ("jump") && !lastCom.Equals("jump") && !lastCom.Equals("right") && !lastCom.Equals("left") && !lastCom.Equals("forward")
+					&& !lastCom.Equals("back") && !com.Equals("right") && !com.Equals("left") && !com.Equals("forward") && !com.Equals("back")) {
 					rb.velocity += new Vector3(0, jumpSpeed, 0);
 					if (obj.transform.position.y > 0.25f){
 						// stop adding speed on the y-axis
