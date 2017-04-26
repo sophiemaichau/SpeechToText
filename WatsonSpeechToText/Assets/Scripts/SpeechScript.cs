@@ -115,7 +115,11 @@ public class SpeechScript : MonoBehaviour {
 				if (commando.Equals ("back"))
 					obj.transform.position -= new Vector3 (0, 0, walkSpeed * Time.time);
 
-				if (commando.Equals ("jump") && !lastCommand [lastCommand.Count - 2].Equals ("jump")) {
+				string com = lastCommand [lastCommand.Count - 1];
+				string lastCom = lastCommand [lastCommand.Count - 2];
+
+				if (commando.Equals ("jump") && !lastCom.Equals("jump") && !lastCom.Equals("right")
+					&& !com.Equals("right") && !com.Equals("left") && !com.Equals("forward") && !com.Equals("back")) {
 					rb.velocity += new Vector3(0, jumpSpeed, 0);
 					if (obj.transform.position.y > 0.25f){
 						// stop adding speed on the y-axis
