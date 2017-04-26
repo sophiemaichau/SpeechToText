@@ -100,7 +100,7 @@ public class SpeechScript : MonoBehaviour {
 				lastCommand.Add (commando);
 
 				if (commando.Equals ("rotate"))
-					obj.transform.rotation = Quaternion.Euler(new Vector3(0, rotationSpeed * Time.deltaTime, 0));
+					obj.transform.rotation = Quaternion.Euler(new Vector3(0, rotationSpeed * Time.time, 0));
 
 				if (commando.Equals ("left"))
 					obj.transform.position -= new Vector3 (walkSpeed * Time.deltaTime, 0, 0);
