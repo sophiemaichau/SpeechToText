@@ -1,4 +1,5 @@
-# Using Watson Speech-To-Text in Unity
+# [OUTDATED] This project can not be used with the latest Watson SDK!
+## Using Watson Speech-To-Text in Unity
 ### Made by Sophie Mai Chau
 
 ![alt text](https://github.com/sophiemaichau/SpeechToText/blob/master/img/img.png)
